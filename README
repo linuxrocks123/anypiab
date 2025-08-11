@@ -1,0 +1,11 @@
+The Social Security Administration makes the source code for a command-line program called anypiab or anypiac, depending on its configuration, available at:
+
+https://www.ssa.gov/oact/anypia/source.html
+
+The source code made available by the SSA is nominally cross-platform, but the Linux version has bitrotted to the extent that it no longer compiles.  Also, there's no Makefile or build instructions for the Linux verstion in the source distribution, which is not ideal.
+
+This repository takes the SSA source code and fixes the Linux version.  It also includes a shell script called "Build" that serves as a very rudimentary build system for the code.
+
+Please refer to the SSA website for detailed usage instructions, but what you basically need to do is create a .pia file, which is an extremely retro text file format representing a person's work history.  You can create this file by hand or using a Windows GUI program which is also buildable from this same source base.  Perhaps I'll make a cross-platform version of that GUI program at a later date.  The retro text file format is documented on the SSA website, so creating a GUI program to make PIA files should not be hard.
+
+Works by the United States Federal Government are automatically public domain, so I believe the original SSA source code is uncopyrighted.  Because I want to preserve the original public domain status of this source code to the maximum extent possible, I have added an Unlicense declaration as the LICENSE file to this repository, which applies to my changes.

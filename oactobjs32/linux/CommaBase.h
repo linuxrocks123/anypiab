@@ -12,7 +12,7 @@
 /// <summary>Use ostrstream for formatting output.</summary>
 #define OSTREAM std::ostrstream
 /// <summary>End of ostrstream designated by ends.</summary>
-#define ENDS start << ends
+#define ENDS start << std::ends
 /// <summary>Use freeze function to freeze the string.</summary>
 #define FREEZE(strm) strm.freeze(false)
 

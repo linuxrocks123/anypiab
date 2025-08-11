@@ -1,14 +1,16 @@
-// $Id: BitAnnualBase.h 1.2 2009/02/17 07:13:30EST 729915 Development  $
+// Declarations for the <see cref="BitAnnual"/> class to manage an array of
+// annual bits for Windows.
 //
-// Declarations needed for class to manage an array of annual bits for Linux.
+// $Id: BitAnnualBase.h 1.7 2011/08/11 15:21:15EDT 044579 Development  $
 
 #pragma once
-#ifndef __BITANNUALBASE_H
-#define __BITANNUALBASE_H   1   // Prevent multiple includes
 
-#include <vector>
-#include "BitPacked.h"
-// Bit array.
-typedef std::vector< BitPacked > BitAnnualData;
+#include <bitset>
 
-#endif    // __BITANNUALBASE_H
+/// <summary>Size to use for bit array in <see cref="BitAnnual"/> (from 1937 to
+/// 2100).</summary>
+const int MAX_BITSET_SIZE = 164;
+
+/// <summary>Bit array used in <see cref="BitAnnual"/> (a std::bitset).
+/// </summary>
+typedef std::bitset< MAX_BITSET_SIZE > BitAnnualData;

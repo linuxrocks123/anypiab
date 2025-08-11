@@ -4,6 +4,7 @@
 // $Id: InsCodeArray.cpp 1.20 2017/08/29 09:01:43EDT 277133 Development  $
 
 #include <algorithm>
+#include <utility>
 #include "InsCodeArray.h"
 
 using namespace std;

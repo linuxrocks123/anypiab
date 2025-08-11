@@ -1,0 +1,3 @@
+#! /bin/sh
+
+c++ -O3 -march=native -flto -o anypiac_linux -DANYPIAB -DDETAILS -I oactobjs32/include/ -I oactobjs32/linux -I oactobjs32 -Ianypia32 `find . -name '*.cpp' | grep -v windows | grep -v anypia32`

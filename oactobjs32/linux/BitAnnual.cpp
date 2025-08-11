@@ -4,6 +4,7 @@
 
 #include "oactcnst.h"
 #include "BitAnnual.h"
+#include "BitPacked.h"
 
 using namespace std;
 
@@ -26,25 +27,21 @@ using namespace std;
 /// BitSet and doesn't need any parameters because the default constructor
 /// initializes all of the bits to zero.</remarks>
 BitAnnual::BitAnnual( int newBaseYear, int newLastYear ) :
-data((newLastYear - newBaseYear) / U_NUMBITS + 1),
+theData((newLastYear - newBaseYear) / U_NUMBITS + 1),
 baseYear(newBaseYear), lastYear(newLastYear)
 { }
 
-/// <summary>Returns true if any bit is set, false otherwise.</summary>
+/// <summary>Copies all values from the BitAnnual argument to this instance.
+/// </summary>
 ///
-/// <returns>True if any bit is set, false otherwise.</returns>
-bool BitAnnual::any() const
-{
-   for (unsigned i = 0; i < data.size(); i++) {
-      if (data[i].any())
-         return true;
-   }
-   return false;
-}
-
-/// <summary>Zeroes out all data values.</summary>
-void BitAnnual::deleteContents()
-{
-   for (unsigned i = 0; i < data.size(); i++)
-      data[i].deleteContents();
-}
+/// <remarks>On the linux system, data is a vector of BitPacked's -- so the
+/// constructor needs to know how many to create. On other systems (which
+/// conform to the standard and have a std::bitset class built in), data is a
+/// std::bitset and doesn't need parameters because the default
+/// constructor initializes all of the bits to zero.</remarks>
+///
+/// <param name="bitAnnual">The BitAnnual to copy from.</param>
+BitAnnual::BitAnnual( const BitAnnual& bitAnnual ) :
+theData(bitAnnual.theData), baseYear(bitAnnual.baseYear),
+lastYear(bitAnnual.lastYear)
+{ }
